@@ -44,7 +44,7 @@ jobs:
         $env:PWD_DIR= $PWD.Path
         echo "PWD_DIR=$env:PWD_DIR"
         ls
-        choco install visualstudio2022community
+        choco install visualstudio2022community --package-parameters "--add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --add Microsoft.VisualStudio.Component.VC.ATLMFC --add Microsoft.VisualStudio.Component.VC.Tools.ARM64 --add Microsoft.VisualStudio.Component.DiaSdk"
         pip install lit filecheck
 
     - name: Configure and build minimal LLVM for use by ids
