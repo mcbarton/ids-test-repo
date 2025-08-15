@@ -54,8 +54,8 @@ jobs:
               -D CMAKE_BUILD_TYPE=Release \
               -S C:/a/ids-test-repo/ids-test-repo/llvm-project/llvm/ \
               -D LLVM_ENABLE_PROJECTS=clang \
-              -D CMAKE_C_COMPILER="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/bin/clang" \
-              -D CMAKE_CXX_COMPILER="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/bin/clang++" \
+              -D CMAKE_C_COMPILER="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/bin/clang.exe" \
+              -D CMAKE_CXX_COMPILER="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/bin/clang++.exe" \
               -D LLVM_TARGETS_TO_BUILD="host" \
               -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
               -G Ninja
@@ -68,8 +68,8 @@ jobs:
         cmake -B C:/a/ids-test-repo/ids-test-repo/ids/build/ \
               -S C:/a/ids-test-repo/ids-test-repo/ids/ \
                -D CMAKE_BUILD_TYPE=Release \
-               -D CMAKE_C_COMPILER="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/bin/clang" \
-               -D CMAKE_CXX_COMPILER="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/bin/clang++" \
+               -D CMAKE_C_COMPILER="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/bin/clang.exe" \
+               -D CMAKE_CXX_COMPILER="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/bin/clang++.exe" \
                -D CMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld \
                -D LLVM_DIR="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/lib/cmake/llvm/" \
                -D Clang_DIR="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/lib/cmake/clang/" \
