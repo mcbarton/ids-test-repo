@@ -61,20 +61,20 @@ jobs:
         ninja -t targets all | grep "CommonTableGen: phony$" | grep -v "/" | sed 's/:.*//'
 
     - name: Configure ids
-      shell: bash
+      shell: pwsh
       run: |
-        cmake -B C:/a/ids-test-repo/ids-test-repo/ids/build/ \
-              -S C:/a/ids-test-repo/ids-test-repo/ids/ \
-               -D CMAKE_BUILD_TYPE=Release \
-               -D CMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld \
-               -D LLVM_DIR="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/lib/cmake/llvm/" \
-               -D Clang_DIR="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/lib/cmake/clang/" \
-               -D FILECHECK_EXECUTABLE=$(which filecheck) \
-               -D LIT_EXECUTABLE=$(which lit) \
+        cmake -B C:/a/ids-test-repo/ids-test-repo/ids/build/ `
+              -S C:/a/ids-test-repo/ids-test-repo/ids/ `
+               -D CMAKE_BUILD_TYPE=Release `
+               -D CMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld `
+               -D LLVM_DIR="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/lib/cmake/llvm/" `
+               -D Clang_DIR="C:/a/ids-test-repo/ids-test-repo/clang+llvm-20.1.8-aarch64-pc-windows-msvc/lib/cmake/clang/" `
+               -D FILECHECK_EXECUTABLE=$(which filecheck) `
+               -D LIT_EXECUTABLE=$(which lit) `
                -G Ninja
 
     - name: Build ids
-      shell: bash
+      shell: pwsh
       run: |
         cmake --build C:/a/ids-test-repo/ids-test-repo/ids/build \
               --config Release
