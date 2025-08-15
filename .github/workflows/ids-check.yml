@@ -40,7 +40,10 @@ jobs:
       shell: pwsh
       run: |
         Invoke-WebRequest -Uri "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/clang+llvm-20.1.8-aarch64-pc-windows-msvc.tar.xz" -OutFile "clang20.tar.xz"
-        & "C:\Program Files\Git\usr\bin\tar.exe" -xf .\clang20.tar.xz
+        & "C:\Program Files\Git\usr\bin\tar.exe" -xvf .\clang20.tar.xz
+        $env:PWD_DIR= $PWD.Path
+        echo "PWD_DIR=$env:PWD_DIR"
+        ls
         choco install visualstudio2022community
         pip install lit filecheck
 
