@@ -76,7 +76,7 @@ jobs:
     - name: Build ids
       shell: pwsh
       run: |
-        cmake --build C:/a/ids-test-repo/ids-test-repo/ids/build \
+        cmake --build C:/a/ids-test-repo/ids-test-repo/ids/build `
               --config Release
 
     - name: Run ids over compilation database
